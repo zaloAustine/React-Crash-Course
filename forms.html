@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>introduction</title>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+</head>
+
+<body>
+
+    <div id="app"></div>
+
+    <Script type="text/babel">
+        class App extends React.Component {
+
+            state = {
+                name: 'zalo',
+                age: 20
+            }
+            handleChange = (e) => {
+                this.setState({
+                    name: e.target.value
+                })
+            }
+
+            handleSubmitForm = (e) => {
+                e.preventDefault();
+                console.log("form submit",this.state.name)
+            }
+
+            render() {
+                return (
+                    <div className="app-component">
+                        <p>My name is : {this.state.name}</p>
+                        <form onSubmit={this.handleSubmitForm}>
+                            <input type="text" onChange={this.handleChange} />
+                            <button>Submit</button>
+                        </form>
+
+                    </div>
+                )
+            }
+        }
+
+        ReactDOM.render(<App />, document.getElementById('app'))
+    </Script>
+
+</body>
+
+</html>
