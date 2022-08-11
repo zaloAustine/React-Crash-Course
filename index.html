@@ -20,16 +20,19 @@
                 age: 20
             }
 
-            handleClick(e) {
-                console.log(e.target)
-                console.log(this.state)
+            // can access the this 
+            handleClick = (e) => {
+                this.setState({
+                    name: 'musa',
+                    age: 56
+                })
             }
 
             handleMouseHover(e) {
                 console.log(e.target)
             }
 
-            handleCopy(e){
+            handleCopy(e) {
                 console.log("try being original")
             }
 
