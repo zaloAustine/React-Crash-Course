@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>introduction</title>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+</head>
+
+<body>
+
+    <div id="app"></div>
+
+    <Script type="text/babel">
+        class App extends React.Component {
+
+            state = {
+                name: 'zalo',
+                age: 20
+            }
+
+            handleClick(e) {
+                console.log(e.target)
+                console.log(this.state)
+            }
+
+            handleMouseHover(e) {
+                console.log(e.target)
+            }
+
+            handleCopy(e){
+                console.log("try being original")
+            }
+
+            render() {
+                return (
+                    <div className="app-component">
+                        <h1> Hey , ninjas</h1>
+                        <p>My name is : {this.state.name} and i am {this.state.age}</p>
+                        <button onClick={this.handleClick} > Click Me</button>
+                        <button onMouseOver={this.handleMouseHover}>Hover me</button>
+                        <p onCopy={this.handleCopy}>What we think , we become</p>
+                    </div>
+                )
+            }
+        }
+
+        ReactDOM.render(<App />, document.getElementById('app'))
+    </Script>
+
+</body>
+
+</html>
